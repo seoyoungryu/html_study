@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/nameList.css">
+    <script>
+        function fn_register(){
+            let obj = document.getElementById('nameList');
+            let cls = document.getElementsByClassName('myDiv');
+            let newDIV = document.createElement('div');
+            newDIV.setAttribute('class','myDiv');
+            
+            let msg = document.getElementById('userName').value;
+            obj.innerHTML += msg;
+            document.getElementById('userName').value =""; // 입력창 비우기
+
+            let btn = document.createElement('button');
+            btn.innerHTML = 'X';
+            
+            btn.onclick = function(){
+                let p = this.parentElement.parentElement;//this가 btn이니까 그것의 부모의 부모는 obj가 된다.
+                let div = this.parentElement;// btn의 부모는 문장이 담긴 div클래스
+                p.removeChild(div);
+            }
+            newDIV.appendChild(btn);
+            document.getElementById('nameList').appendChild(newDIV);
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>참가 신청서</h1>
+        <form action="" onsubmit="return false">
+            <input type="text" id="userName" placeholder="이름을 입력하세요" autocomplete="off" required>
+            <button type="button" onclick="fn_register()">신청</button>
+        </form>
+        <hr>
+        <div id="nameList"></div>
+    </div>
+</body>
+</html>

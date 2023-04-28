@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--텍스트를 입력 받아 거꾸로 출력하시오-->
+    <script>
+        let msg = prompt("입력하세요! : ");
+
+        document.write("<h1>입력값 : " + msg+"</h1>");//<h1>~<h6> 큰 글씨 설정 <h6>과 가까울수록 작은 글씨
+        //거꾸로 출력
+        let temp=""; //let temp;로만 선언하면 undefined가 뜸
+        for(let i = 0;i<msg.length;i++){
+            temp += msg.substr(msg.length-1-i,1);
+        }
+        document.write("<h1>로꾸꺼:" + temp+"</h1>");
+
+        // 배열에 넣어서출력하기
+        // let arr = msg.split('').reverse(); //split을 적용하면 배열형식이 된다.
+        // let result ="";
+        // for(let v of arr){
+        //     result+=v;
+        // }
+        // document.write("<h1>입력값 : " + msg + "</h1>");
+        // document.write("<h1>로꾸꺼 : " + result + "</h1>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

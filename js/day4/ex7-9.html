@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 Object</title>
+    <script>
+        function inquiry(){
+            return this.balance;
+        }
+        function deposit(money){this.balance += money}; //입금
+        function withdraw(money){this.balance -= money; return money}; //출금
+        // 객체 만들기
+        // let account = new Object();
+        // let account = {}; // 위와 동일함
+        let account = {"owner": "팽수"}; 
+        account.code = 1111;
+        account.balance = 100000000;
+        account.inquiry = inquiry;
+        account.deposit = deposit;
+        account.withdraw = withdraw;
+        account.print = function(){
+            alert(this.balance);
+        }
+        console.log(account);
+        document.write(account.owner);
+        account.deposit(1000);
+        document.write("1000원 입금 후 잔액:" + account.inquiry() + "</br>");
+        account.withdraw(10000);
+        document.write("10000원 출금 후 잔액:" + account.inquiry() + "</br>");
+        account.print();
+
+        // keys 배열에 account의 key값 담기
+        let keys = Object.keys(account); //Object는 key,value로 구성
+        console.log(keys); // key값들 모두 출력
+        console.log(account['owner']); //document.write(account.owner);와 같은 값 출력
+        for(let i =0;i<keys.length;i++){
+            console.log(account[keys[i]]); //account의 key값에 해당하는 value들 반복출력
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

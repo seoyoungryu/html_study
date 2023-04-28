@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID</title>
+</head>
+<body>
+    <button onclick= "fn_changeSize('+')">텍스트 크기변경 + </button>
+    <button onclick= "fn_changeSizeDown('-')">텍스트 크기변경 - </button>
+    <p id = "text1">이 텍스트의 크기를 변경하세요!</p>
+
+    <button onclick="fn_visibility()">숨기기/보이기</button>
+    <div id = "box">이 내용을 숨기거나 보이게 하세요!!</div>
+
+    <img id ="slider" src = "/ht/week1/media/고양이1.png" width="200px" height="240px" alt="">
+    <button onclick="fn_next()">다음이미지</button>
+    <script>
+        let size = 20;
+        function fn_changeSize(flag){
+            if(flag == '+'){
+                size ++;
+            }else{
+                size--;
+            }
+            // size ++;
+            // let text = document.getElementById('text1');
+            text.style.fontSize = size + 'px';
+        }
+        // function fn_changeSizeDown(){
+        //     size--;
+        //     text = document.getElementById('text1');
+        //     text.style.fontSize = size + 'px';
+        // }
+        function fn_visibility(){
+            let box = document.querySelector('#box'); // box라는 id를 가진 객체를 css스타일로 불러옴
+            // .querySelectorAll 모두 불러올 때
+                                // === 값,타입 모두 같은지 비교   //같을 때 //다를 때              
+            box.style.display = box.style.display === "none" ? "block" : "none";
+        }
+        // setInterval(fn_visibility,500); //깜빡거리게 한다면
+        let images = ['/ht/week1/media/고양이1.png','/ht/week1/media/고양이2.png','/ht/week1/media/고양이3.png'];
+        let currentIdx = 0;
+        function fn_next() {
+            let slider = document.getElementById('slider');
+            currentIdx = (currentIdx + 1) % images.length;
+            console.log(currentIdx);
+            slider.src = images[currentIdx];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fn_int(){
+            return Math.floor(Math.random() * 9) + 1; // 1 ~ 9
+        }
+        for(let i=0;i<100;i++){
+            console.log(fn_int());
+        }
+        console.log("============================");
+        // console.log('2 * 10은 :', eval('2*10'));
+        
+        /*
+            구구단 연습기를 만들어 주세요
+            랜덤 함수를 이용하여
+            랜덤 구구단 문제 생성 후 사용자에게 퀴즈 (5판)
+            5판 이후 (어떤 문제) 맞추고 (어떤 문제) 틀렸는지 출력
+        */
+        let correct=0, wrong = 0;
+        for(let i =0;i<5;i++){
+            let msg = (fn_int() + "*" + fn_int());
+            console.log(msg, eval(msg));
+            let ans = prompt(msg);
+            ans = parseInt(ans);
+                if(ans == eval(msg)){
+                    document.write(msg + "문제 맞음:" + ans +"<br>");
+                    correct++
+                }else{
+                    document.write(msg + "문제 틀림:" + ans + "  정답: " + eval(msg) + "<br>");
+                    wrong++;
+                }
+        }
+        document.write("맞은 문제 : "+ correct + "틀린 문제 : " + wrong);
+        
+    </script>
+</head>
+<body>
+   
+   
+</body>
+</html>

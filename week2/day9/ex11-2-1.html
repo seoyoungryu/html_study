@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 그리기</title>
+    <style>
+        body{background-color: aquamarine; margin: 0; left: 0;}
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="420px" height="420px"
+            style="background-color: white; margin: 20px;" onclick="fn_fill(this)"></canvas>
+    <button onclick="fn_draw()">그려</button>
+    <script>
+        let w = 400;
+        let h = 400;
+        let p = 10;
+        let canvas = document.getElementById('myCanvas');
+        let context = canvas.getContext('2d');
+        function fn_draw(){
+            for(let i=0;i<11;i++){
+                context.moveTo(p + 0.5 + (i*40) , p);
+                context.lineTo(p + 0.5 + (i*40), 410);
+                context.strokeStyle = 'black';
+                context.stroke();
+                context.moveTo(p,p + 0.5 + (i*40));
+                context.lineTo(410,p + 0.5 + (i*40));
+                context.strokeStyle = 'black';
+                context.stroke();
+            }
+        }
+        function fn_fill(obj){
+            var drawArray = new Array();
+            let idx = canvas.selectedIndex;
+            for(let i=0;i<11;i++){
+                drawArray[i] = context.idx(p + 0.5 + (i*40),p + 0.5 + (i*40));
+                context.beginPath(); // 빈경로
+                context.fillStyle ='violet';
+                context.rect(p + 0.5 + (i*40),p + 0.5 + (i*40),40,40);
+                context.fill();
+            }
+            
+        }
+    </script>
+</body>
+</html>
