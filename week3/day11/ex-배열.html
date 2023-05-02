@@ -49,30 +49,35 @@
          }
 
         function fn_one_del1(){
+            let strCheck = false;
             // for(let v in menus){
             for(let v = 0; v<menus.length;v++){
                 if(menus[v] == document.getElementById('menus').value){
                 menus.splice(v,1);
+                strCheck = true;
                 fn_print(); 
                 document.getElementById('menus').value = '';  
                 break;
-            }else{
+                }
+            }
+            if(strCheck==false){
                 alert("메뉴에 없습니다.")
             }
         }
-        
-        }
         function fn_one_del2(){
+            let strCheck = false;
             // for(let v in menus){
             for(let v = 0; v<menus.length;v++){
                 if(menus[v].includes(document.getElementById('menus').value)){
                     menus.splice(v,1);
+                    strCheck = true;
                     fn_print();  
                     document.getElementById('menus').value = '';   
                     break;
-                }else{
-                    alert("메뉴에 없습니다.")
                 }
+            }
+            if(strCheck==false){
+                    alert("메뉴에 없습니다.")
             }
         }
     </script>
