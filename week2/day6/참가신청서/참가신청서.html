@@ -8,25 +8,32 @@
     <link rel="stylesheet" href="css/nameList.css">
     <script>
         function fn_register(){
-            let obj = document.getElementById('nameList');
-            let cls = document.getElementsByClassName('myDiv');
-            let newDIV = document.createElement('div');
-            newDIV.setAttribute('class','myDiv');
+            let con = document.getElementById('container');
+            let name = document.getElementById('userName');
+            let list = document.getElementById('nameList');
+            let newP = document.createElement('p');
+            list.appendChild(newP);
+            newP.innerHTML = name.value;
+            name.value = "";
             
-            let msg = document.getElementById('userName').value;
-            obj.innerHTML += msg;
-            document.getElementById('userName').value =""; // 입력창 비우기
-
-            let btn = document.createElement('button');
+            let btn = document.createElement('span');
+            btn.setAttribute('class','del');            
             btn.innerHTML = 'X';
             
+            // document.getElementById('userName').value =""; // 입력창 비우기
             btn.onclick = function(){
-                let p = this.parentElement.parentElement;//this가 btn이니까 그것의 부모의 부모는 obj가 된다.
-                let div = this.parentElement;// btn의 부모는 문장이 담긴 div클래스
-                p.removeChild(div);
+                let div = this.parentElement.parentElement;//this가 btn이니까 그것의 부모의 부모는 obj가 된다.
+                let p = this.parentElement;// btn의 부모는 문장이 담긴 div클래스
+                div.removeChild(p);
             }
-            newDIV.appendChild(btn);
-            document.getElementById('nameList').appendChild(newDIV);
+            newP.appendChild(btn);
+            
+
+        }
+        function fn_enter(e){
+            if(e.keyCode == 13){
+                fn_register();
+            }
         }
     </script>
 </head>
@@ -34,7 +41,7 @@
     <div id="container">
         <h1>참가 신청서</h1>
         <form action="" onsubmit="return false">
-            <input type="text" id="userName" placeholder="이름을 입력하세요" autocomplete="off" required>
+            <input type="text" id="userName" placeholder="이름을 입력하세요" autocomplete="off" required onkeyup="fn_enter(event)">
             <button type="button" onclick="fn_register()">신청</button>
         </form>
         <hr>
