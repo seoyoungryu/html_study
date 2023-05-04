@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>팝업</title>
     <script>
+        function fn_check(){
+            let now = new Date();
+            if(document.getElementByName("chb")[0].checked){
+                now.setTime(now.getTime() + (1*60*1000))
+                setCookie('pop', 'Y', now);
+                window.close();
+            }
 
-        if(document.getElementById("check").checked){
-            
         }
     </script>
 </head>
@@ -16,7 +21,7 @@
     <h3> 공지사항!!</h3>
     <h4> 공지내용입니다.....</h4>
     <hr>
-    2분 동안은 다시 안보기 <input type="checkbox" id = "check" name="chb">
+    2분 동안은 다시 안보기 <input type="checkbox" name="chb">
     <button id="btn">닫기</button>
 
 </body>
