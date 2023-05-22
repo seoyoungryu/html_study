@@ -28,10 +28,13 @@
                    $.each(records, function(i,v){
                     sido.push(v['시도명']);
                    });
-                   //정렬후
+                   //방법 1
+                   //정렬후 unique(중복제거)를 해줘야 함
                    sido.sort();
                    $.unique(sido);
                    console.log(sido);
+
+                   //방법 2
                    //es6 이후
                    let set = new Set();
                    $.each(records, function(i,v){
@@ -112,7 +115,7 @@
 
 </head>
 <body>
-    <div class="">
+    <div class="container">
         <canvas id="myChart"></canvas>
     </div>
     
