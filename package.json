@@ -1,0 +1,29 @@
+{
+  "name": "html_workspace",
+  "version": "1.0.0",
+  "description": "visual studio code_html study !!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seoyoungryu/html_study.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seoyoungryu/html_study/issues"
+  },
+  "homepage": "https://github.com/seoyoungryu/html_study#readme",
+  "dependencies": {
+    "base": "^3.0.0",
+    "chat": "^1.0.8",
+    "db": "^4.0.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "include": "^1.1.0",
+    "socket.io": "^4.6.1"
+  }
+}
