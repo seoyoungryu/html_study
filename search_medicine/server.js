@@ -29,15 +29,10 @@ app.get('/loginPage', async(req, res)=>{
 let bcrypt = require('bcrypt');
 let saltRounds = 10; 
 const sqlConfig = { user_info : `SELECT *
-                                 FROM MD_USER 
+                                 FROM MEDI_USER 
                                  WHERE user_id = :1`
-                  , user_insert : `INSERT INTO MD_USER 
-                                   VALUES(:user_id, :user_pw, :user_nm)`
-                  , file_insert : `INSERT INTO files(file_seq, user_id, originalname, mimetype, f_size, destination, filename)
-                                VALUES (file_seq.nextval, :user_id, :originalname, :mimetype, :f_size, :destination, :filename)`
-                  ,file_select : `SELECT *
-                                  FROM files
-                                  WHERE user_id =:1`};
+                  , user_insert : `INSERT INTO MEDI_USER 
+                                   VALUES(:user_id, :user_pw, :user_nm)`};
 
 app.post('/signup', async(req, res)=>{
     console.log(req.body);

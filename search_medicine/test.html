@@ -7,30 +7,25 @@
     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
     <title>Document</title>
     <script>
-        numOfRows=50
-        url='http://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList'
-        MobileOS='ETC'
-        MobileApp='AppTest'
-        _type='json'
-        serviceKey='NEccYfO1X6eVQQMwBeaOF92nX0vIjmxTjSUKcvdQmqdoKw+njpTAa71j5YSwNjPpt/qalkuYnNs8KW0oSxs8gg=='
-        $(document).ready(function(){
-            $.ajax({
-                url : url
-                ,dataType : 'json'
-                ,type : 'get'
-                ,data : {serviceKey : serviceKey
-                        , MobileApp : MobileApp
-                        ,MobileOS : MobileOS
-                        , _type : _type
-                        ,numOfRows : numOfRows}
-                ,success : function(res){
-                    console.log(res);
-                },error : function(e){
-                    console.log(e);
-                }
-            });
-        });
+        var xhr = new XMLHttpRequest();
+        var url = 'http://apis.data.go.kr/1471000/MdcinGrnIdntfcInfoService01/getMdcinGrnIdntfcInfoList01'; /*URL*/
+        var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'NEccYfO1X6eVQQMwBeaOF92nX0vIjmxTjSUKcvdQmqdoKw%2BnjpTAa71j5YSwNjPpt%2FqalkuYnNs8KW0oSxs8gg%3D%3D'; /*Service Key*/
+        queryParams += '&' + encodeURIComponent('item_name') + '=' + encodeURIComponent(''); /**/
+        queryParams += '&' + encodeURIComponent('entp_name') + '=' + encodeURIComponent(''); /**/
+        queryParams += '&' + encodeURIComponent('item_seq') + '=' + encodeURIComponent(''); /**/
+        queryParams += '&' + encodeURIComponent('img_regist_ts') + '=' + encodeURIComponent(''); /**/
+        queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+        queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('100'); /**/
+        queryParams += '&' + encodeURIComponent('edi_code') + '=' + encodeURIComponent(''); /**/
+        queryParams += '&' + encodeURIComponent('type') + '=' + encodeURIComponent('json'); /**/
+        xhr.open('GET', url + queryParams);
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                console.log('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+            }
+        };
 
+        xhr.send('');
     </script>
 </head>
 <body>
