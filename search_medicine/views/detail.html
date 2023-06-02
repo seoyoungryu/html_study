@@ -112,7 +112,7 @@
         getMarkCodeImg($("input[type=checkbox][name=use_yn]:checked").val(), $("input[type=checkbox][name=group_code]:checked").val(), 1);
     });
 
-    /* $('#use_y').bind('click', function (e) {
+    $('#use_y').bind('click', function (e) {
         $("#use_y").prop("checked", true);
         $("#use_all").prop("checked", false);
 
@@ -174,7 +174,7 @@
         $("#group_codeall").prop("checked", true);
 
         getMarkCodeImg($("input[type=checkbox][name=use_yn]:checked").val(), $("input[type=checkbox][name=group_code]:checked").val(), 1);
-    }); */
+    });
 
     // 제형
     $('#formcode').bind('click', function (e) {
@@ -1022,7 +1022,7 @@ function closemarkimg() {
                 </div>
                 <div class="col-md-4" style="margin-top:3px;">
                     <input type="hidden" name="markimgage" id="markimgage" value="">
-                    <img alt="마크선택" style="width: 36px; height: 36px;" name="mark" id="mark" src="/MARK_IMAGE/plus-square.svg">
+                    <img alt="마크선택" style="width: 36px; height: 36px;" name="mark" id="mark" src="MARK_IMAGE/addbox.png">
                 </div>
             
                 <div class="col-md-2" style="margin-top:3px;">
@@ -1323,17 +1323,158 @@ function closemarkimg() {
                 </div>
                 <div class="col-md-6">
                 </div>
-                <div class="col-md-12" style="text-align:center; margin-top:5px;">
-                    <a class="btn btn-default" href="javascript:void(0);" onclick="initialize();" attr-a="onclick : attr-a">다시 입력</a>
-                    <a class="btn btn-default" href="javascript:void(0);" onclick="Search();" attr-a="onclick : attr-a">검색</a>
-                </div>
+                
                 <!-- <div class="row2" style="margin-top: 5px;"></div>
                 </div> -->
             </form>
-            <footer>   
+            <div id="markcodeimgdiv" style="border-radius: 5px; box-shadow: gray 0px 40px 127px -14px; border: 0px solid black; position: absolute; z-index: 999999; background: white; margin: auto; padding: 0px; top: 8.5px; left: 300px;">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr style="width:92%">
+                            <td>
+                                <label for="basic-url" class="form-label">마크목록</label>
+                            </td>
+                            <td colspan="5">
+                                <label class="form-check-label" for="font">
+                                    [사용]
+                                </label>
+                                <input class="form-check-input" type="checkbox" name="use_yn" id="use_y" value="y">
+                                <label class="form-check-label" for="line">
+                                    사용중
+                                </label>
+                                <input class="form-check-input" type="checkbox" name="use_yn" id="use_all" value="">
+                                <label class="form-check-label" for="line1">
+                                    전체(미사용포함)
+                                </label><br>
+                                <label class="form-check-label" for="back">
+                                    [구분]
+                                </label>
+                                <input class="form-check-input" type="checkbox" name="group_code" id="group_codecom" value="com">
+                                <label class="form-check-label" for="line50">
+                                    업체
+                                </label>
+                                <input class="form-check-input" type="checkbox" name="group_code" id="group_codebody" value="body">
+                                <label class="form-check-label" for="line60">
+                                    신체
+                                </label>
+                                <input class="form-check-input" type="checkbox" name="group_code" id="group_codeaniplant" value="aniplant">
+                                <label class="form-check-label" for="line70">
+                                    동식물
+                                </label>
+                                <input class="form-check-input" type="checkbox" name="group_code" id="group_codeetc" value="etc">
+                                <label class="form-check-label" for="line80">
+                                    기타
+                                </label>
+                                <input class="form-check-input" type="checkbox" name="group_code" id="group_codeall" value="">
+                                <label class="form-check-label" for="line3">
+                                    전체
+                                </label>
+                            </td>
+                        </tr>
+                    </thead>
+
+                    <tbody id="markcodeimgdivtdoby">
+                        
+                        <tr style="text-align:center;">
+                            <td><img onclick="markimgclick('r0552', 'r0552.gif')" alt="r0552" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0552.gif"></td>
+                            <td><img onclick="markimgclick('r0440', 'r0440.gif')" alt="r0440" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0440.gif"></td>
+                            <td><img onclick="markimgclick('r0228', 'r0228.gif')" alt="r0228" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0228.gif"></td>
+                            <td><img onclick="markimgclick('r0328', 'r0328.gif')" alt="r0328" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0328.gif"></td>
+                            <td><img onclick="markimgclick('r0071', 'r0071.gif')" alt="r0071" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0071.gif"></td>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <td><img onclick="markimgclick('r0050', 'r0050.gif')" alt="r0050" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0050.gif"></td>
+                            <td><img onclick="markimgclick('r0027', 'r0027.gif')" alt="r0027" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0027.gif"></td>
+                            <td><img onclick="markimgclick('r0018', 'r0018.gif')" alt="r0018" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0018.gif"></td>
+                            <td><img onclick="markimgclick('r0342', 'r0342.gif')" alt="r0342" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0342.gif"></td>
+                            <td><img onclick="markimgclick('r0421', 'r0421.gif')" alt="r0421" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0421.gif"></td>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <td><img onclick="markimgclick('r0330', 'r0330.gif')" alt="r0330" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0330.gif"></td>
+                            <td><img onclick="markimgclick('r0341', 'r0341.gif')" alt="r0341" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0341.gif"></td>
+                            <td><img onclick="markimgclick('r0410', 'r0410.gif')" alt="r0410" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0410.gif"></td>
+                            <td><img onclick="markimgclick('r0233', 'r0233.gif')" alt="r0233" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0233.gif"></td>
+                            <td><img onclick="markimgclick('r0168', 'r0168.gif')" alt="r0168" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0168.gif"></td>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <td><img onclick="markimgclick('r0069', 'r0069.gif')" alt="r0069" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0069.gif"></td>
+                            <td><img onclick="markimgclick('r0129', 'r0129.gif')" alt="r0129" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0129.gif"></td>
+                            <td><img onclick="markimgclick('r0548', 'r0548.gif')" alt="r0548" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0548.gif"></td>
+                            <td><img onclick="markimgclick('r0450', 'r0450.gif')" alt="r0450" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0450.gif"></td>
+                            <td><img onclick="markimgclick('r0068', 'r0068.gif')" alt="r0068" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0068.gif"></td>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <td><img onclick="markimgclick('r0219', 'r0219.gif')" alt="r0219" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0219.gif"></td>
+                            <td><img onclick="markimgclick('r0232', 'r0232.gif')" alt="r0232" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0232.gif"></td>
+                            <td><img onclick="markimgclick('r0199', 'r0199.gif')" alt="r0199" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0199.gif"></td>
+                            <td><img onclick="markimgclick('r0413', 'r0413.gif')" alt="r0413" style="width:50px;height:50px;border:1px solid;" src="MARK_IMAGE/r0413.gif"></td>
+                            <td><img onclick="markimgclick('r0510', 'r0510.gif')" alt="r0510" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0510.gif"></td>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <td><img onclick="markimgclick('r0213', 'r0213.gif')" alt="r0213" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0213.gif"></td>
+                            <td><img onclick="markimgclick('r0113', 'r0113.gif')" alt="r0113" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0113.gif"></td>
+                            <td><img onclick="markimgclick('r0240', 'r0240.gif')" alt="r0240" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0240.gif"></td>
+                            <td><img onclick="markimgclick('r0283', 'r0283.gif')" alt="r0283" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0283.gif"></td>
+                            <td><img onclick="markimgclick('r0019', 'r0019.gif')" alt="r0019" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0019.gif"></td>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <td><img onclick="markimgclick('r0056', 'r0056.gif')" alt="r0056" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0056.gif"></td>
+                            <td><img onclick="markimgclick('r0546', 'r0546.gif')" alt="r0546" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0546.gif"></td>
+                            <td><img onclick="markimgclick('r0046', 'r0046.gif')" alt="r0046" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0046.gif"></td>
+                            <td><img onclick="markimgclick('r0008', 'r0008.gif')" alt="r0008" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0008.gif"></td>
+                            <td><img onclick="markimgclick('r0065', 'r0065.gif')" alt="r0065" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0065.gif"></td>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <td><img onclick="markimgclick('r0066', 'r0066.gif')" alt="r0066" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0066.gif"></td>
+                            <td><img onclick="markimgclick('r0016', 'r0016.gif')" alt="r0016" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0016.gif"></td>
+                            <td><img onclick="markimgclick('r0350', 'r0350.gif')" alt="r0350" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0350.gif"></td>
+                            <td><img onclick="markimgclick('r0072', 'r0072.gif')" alt="r0072" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0072.gif"></td>
+                            <td><img onclick="markimgclick('r0004', 'r0004.gif')" alt="r0004" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0004.gif"></td>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <td><img onclick="markimgclick('r0116', 'r0116.gif')" alt="r0116" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0116.gif"></td>
+                            <td><img onclick="markimgclick('r0142', 'r0142.gif')" alt="r0142" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0142.gif"></td>
+                            <td><img onclick="markimgclick('r0502', 'r0502.gif')" alt="r0502" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0502.gif"></td>
+                            <td><img onclick="markimgclick('r0075', 'r0075.gif')" alt="r0075" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0075.gif"></td>
+                            <td><img onclick="markimgclick('r0507', 'r0507.gif')" alt="r0507" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0507.gif"></td>
+                        </tr>
+                        <tr style="text-align:center;">
+                            <td><img onclick="markimgclick('r0122', 'r0122.gif')" alt="r0122" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0122.gif"></td>
+                            <td><img onclick="markimgclick('r0554', 'r0554.gif')" alt="r0554" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0554.gif"></td>
+                            <td><img onclick="markimgclick('r0023', 'r0023.gif')" alt="r0023" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0023.gif"></td>
+                            <td><img onclick="markimgclick('r0022', 'r0022.gif')" alt="r0022" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0022.gif"></td>
+                            <td><img onclick="markimgclick('r0397', 'r0397.gif')" alt="r0397" style="width:50px;height:50px;border:1px solid;" src="/MARK_IMAGE/r0397.gif"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">
+                                <div style="text-align: center;">
+                                    <ul class="pagination" style="left: 47%;">
+                                        <li><a class="pagelist" style="cursor: pointer;"><span>&lt;</span></a></li>
+                                        <li><a class="active" style="cursor: pointer;" onclick="getMarkCodeImg('y', 'com', 1)"><span><b>1</b></span></a></li>
+                                        <li><a class="pagelist" style="cursor: pointer;" onclick="getMarkCodeImg('y', 'com', 2)"><span>2</span></a></li>
+                                        <li><a class="pagelist" style="cursor: pointer;" onclick="getMarkCodeImg('y', 'com', 3)"><span>3</span></a></li>
+                                        <li><a class="pagelist" style="cursor: pointer;" onclick="getMarkCodeImg('y', 'com', 3)"><span> &gt; </span></a></li>
+                                    </ul>
+                                </div>
+                                <div style="text-align:center;">
+                                    <a class="btn btn-default" href="javascript:void(0);" onclick="closemarkimg();" attr-a="onclick : attr-a">닫기</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <!-- <hr> -->
+            <div class="col-md-12" style="text-align:center; margin-top:5px;">
+                <a class="btn btn-default" href="javascript:void(0);" onclick="initialize();" attr-a="onclick : attr-a">다시 입력</a>
+                <a class="btn btn-default" href="javascript:void(0);" onclick="Search();" attr-a="onclick : attr-a">검색</a>
+            </div>
+            <footer>
+
             </footer>
         </div>
-        <hr>
+        
                 
             </div> 
     </div>
