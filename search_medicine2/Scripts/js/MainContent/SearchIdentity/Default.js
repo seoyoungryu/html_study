@@ -8,7 +8,9 @@ $(document).ready(function () {
             Search();
         } 
     });
-
+    $("#mark").click(function(){
+        fn_test();
+    });
     initialize();
 
     // 단일/복합
@@ -33,7 +35,7 @@ $(document).ready(function () {
     // 마크
     $('#mark').bind('click', function (e) {
         getMarkCodeImg($("input[type=checkbox][name=use_yn]:checked").val(), $("input[type=checkbox][name=group_code]:checked").val(), 1);
-    });
+    }); 
 
     $('#use_y').bind('click', function (e) {
         $("#use_y").prop("checked", true);
@@ -154,10 +156,10 @@ $(document).ready(function () {
     });
 
     // ATC 코드
-    $('#atccodelv1div .dropdown-menu li > a').bind('click', function (e) {
+    /* $('#atccodelv1div .dropdown-menu li > a').bind('click', function (e) {
         var html = $(this).html();
         $('#atccodelv1div button.dropdown-toggle').html(html + ' <span class="caret"></span>');
-    });
+    }); */
 
     // 제형
     $('#gnlnmcdfomntpcd .dropdown-menu li > a').bind('click', function (e) {
@@ -661,7 +663,7 @@ function initialize() {
     $("#markcodeimgdiv").hide();
     $("#markcodeimgdivtdoby").html("");
     $("#markimgage").val("");
-    $("#mark").attr("src", "/MARK_IMAGE/addbox.png");
+    $("#mark").attr("src", "../../MARK_IMAGE/addbox.png");
     $("#mark").attr("style", "width: 36px; height: 36px;");
     $("#use_y").prop("checked", true);
     $("#use_all").prop("checked", false);
@@ -778,7 +780,7 @@ function Search() {
     $('#searchIdentity').submit();
 }
 
-function getMarkCodeImg(use_yn, group_code, page) {
+/* function getMarkCodeImg(use_yn, group_code, page) {
 
     var data = {
         "use_yn": use_yn,
@@ -877,18 +879,18 @@ function getMarkCodeImg(use_yn, group_code, page) {
             return true;
         }
     });
-}
+} */
 
 function markimgclick(markcode, markcodeimgfilename) {
     $("#markimgage").val(markcode);
-    $("#mark").attr("src", "/MARK_IMAGE/" + markcodeimgfilename); 
+    $("#mark").attr("src", "../../MARK_IMAGE/" + markcodeimgfilename); 
     $("#mark").attr("style", "width: 36px; height: 36px; border: 1px solid;");
 
     $("#markcodeimgdiv").hide();
     $("#markcodeimgdivtdoby").html("");
 
-    $("#use_y").prop("checked", true);
-    $("#use_all").prop("checked", false);
+    //$("#use_y").prop("checked", true);
+    //$("#use_all").prop("checked", false);
     $("#group_codecom").prop("checked", true);
     $("#group_codebody").prop("checked", false);
     $("#group_codeaniplant").prop("checked", false);
@@ -900,11 +902,15 @@ function closemarkimg() {
     $("#markcodeimgdiv").hide();
     $("#markcodeimgdivtdoby").html("");
 
-    $("#use_y").prop("checked", true);
-    $("#use_all").prop("checked", false);
+    //$("#use_y").prop("checked", true);
+    //$("#use_all").prop("checked", false);
     $("#group_codecom").prop("checked", true);
     $("#group_codebody").prop("checked", false);
     $("#group_codeaniplant").prop("checked", false);
     $("#group_codeetc").prop("checked", false);
     $("#group_codeall").prop("checked", false);
+}
+
+function fn_test(){
+    $('#markcodeimgdiv').show();
 }
